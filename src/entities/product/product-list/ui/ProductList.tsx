@@ -1,0 +1,28 @@
+import { FC, memo } from 'react';
+import ProductCard from '@entities/product/product-card/ui/ProductCard.tsx';
+import type { IProductListProps } from '../types';
+import cl from './ProductList.module.scss';
+
+const ProductList: FC<IProductListProps> = ({ products, isLoading, error }) => {
+  if (isLoading) {
+    return <div className={cl.error_handler}>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className={cl.error_handler}>Error: {error}</div>;
+  }
+
+  if (products.length === 0) {
+    return <div className={cl.error_handler}>No products found.</div>;
+  }
+
+  return (
+    <div className={cl.cards}>
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+  );
+};
+
+export default memo(ProductList);

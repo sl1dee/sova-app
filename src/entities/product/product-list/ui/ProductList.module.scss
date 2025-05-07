@@ -1,0 +1,12 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.error_handler {
+  height: 100vh;
+  color: #1a1a1a;
+  font-size: 20px;
+  font-weight: 700;
+}

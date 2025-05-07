@@ -1,0 +1,24 @@
+.wrapper {
+}
+
+.card {
+  border: 1px solid #888888;
+  border-radius: 4px;
+  background-color: #cccccc;
+  color: #555555;
+  padding: 20px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    border-color: #1a1a1a;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.name {
+  color: #1a1a1a;
+}
+
+.price {
+  color: #1a1a1a;
+}
