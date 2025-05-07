@@ -1,0 +1,172 @@
+.productPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #1a1a1a;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  color: #3b82f6;
+  margin-bottom: 24px;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.backIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.productTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.productContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.productImageContainer {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+}
+
+.mainImage {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.imageGallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.galleryItem {
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+}
+
+.productDetails {
+  width: 100%;
+}
+
+.detailsSection {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.specItem {
+  margin-bottom: 8px;
+}
+
+.specTitle {
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+.priceValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.categoriesSection,
+.tagsSection {
+  margin-top: 16px;
+}
+
+.tagsContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.categoryTag {
+  padding: 4px 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tag {
+  padding: 4px 8px;
+  background-color: #dbeafe;
+  color: #1e40af;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  padding: 64px 0;
+  font-size: 18px;
+  color: #4b5563;
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 64px 0;
+}
+
+.errorTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 16px;
+}
+
+.errorMessage {
+  margin-bottom: 24px;
+}
