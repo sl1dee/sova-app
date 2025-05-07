@@ -1,0 +1,93 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #888888;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.textareaContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 16px;
+  color: #888888;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #333333;
+  }
+}
+
+.cancelButton {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #999;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #777;
+  }
+}
+
+.hiddenFields {
+  background-color: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border-left: 4px solid #4a4a4a;
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+}
