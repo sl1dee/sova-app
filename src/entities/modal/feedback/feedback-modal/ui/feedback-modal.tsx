@@ -1,11 +1,11 @@
 import { FC, useCallback } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useAuth } from '@features/auth';
-import InputCalendar from '@shared/ui/inputs/input-calendar/ui/InputCalendar.tsx';
-import InputEmail from '@shared/ui/inputs/input-email/ui/InputEmail.tsx';
-import InputPhone from '@shared/ui/inputs/input-phone/ui/InputPhone.tsx';
-import InputText from '@shared/ui/inputs/input-text/ui/InputText.tsx';
-import cl from './FeedbackModal.module.scss';
+import InputCalendar from '@shared/ui/inputs/input-calendar/ui/input-calendar.tsx';
+import InputEmail from '@shared/ui/inputs/input-email/ui/input-email.tsx';
+import InputPhone from '@shared/ui/inputs/input-phone/ui/input-phone.tsx';
+import InputText from '@shared/ui/inputs/input-text/ui/input-text.tsx';
+import cl from './feedback-modal.module.scss';
 
 export interface IFeedbackModalData {
   fullName: string;

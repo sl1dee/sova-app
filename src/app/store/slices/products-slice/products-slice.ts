@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { productsApi } from '@shared/api/products/products.ts';
-import type { IProductsState } from './productsSlice.types.ts';
+import type { IProductsState } from './products-slice.types.ts';
 
 const initialState: IProductsState = {
   priceMin: '',

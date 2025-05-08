@@ -1,5 +1,5 @@
 import { FC, memo, useCallback } from 'react';
-import cl from './InputBase.module.scss';
+import cl from './input-base.module.scss';
 
 interface IInputBaseProps {
   value: string;

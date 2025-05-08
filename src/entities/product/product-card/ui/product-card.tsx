@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 import type { IProduct } from '@shared/api/products/products.types.ts';
-import cl from './ProductCard.module.scss';
+import cl from './product-card.module.scss';
 
 interface IProductCardProps {
   product: IProduct;

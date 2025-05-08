@@ -1,9 +1,9 @@
 import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { FC, memo } from 'react';
-import ProductCard from '@entities/product/product-card/ui/ProductCard.tsx';
+import ProductCard from '@entities/product/product-card/ui/product-card.tsx';
 import type { IProduct } from '@shared/api/products/products.types.ts';
-import cl from './ProductList.module.scss';
+import cl from './product-list.module.scss';
 
 interface IProductListProps {
   products: IProduct[];

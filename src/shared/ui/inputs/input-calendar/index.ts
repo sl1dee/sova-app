@@ -1,1 +1,1 @@
-export { default } from './ui/InputCalendar.tsx';
+export { default } from './ui/input-calendar.tsx';

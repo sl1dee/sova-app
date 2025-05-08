@@ -1,1 +1,1 @@
-export { default } from './ui/ProtectedRoute.tsx';
+export { default } from './ui/protected-route.tsx';

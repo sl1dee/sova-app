@@ -1,9 +1,9 @@
 import { memo, useCallback, useEffect, useState } from 'react';
-import { setPriceMax, setPriceMin } from '@app/store/slices/productsSlice';
 import { useAppDispatch, useAppSelector } from '@app/store/store.hooks.ts';
-import { useDebounce } from '@shared/lib/hooks/useDebounce.ts';
-import InputText from '@shared/ui/inputs/input-text/ui/InputText.tsx';
-import cl from './ProductSearch.module.scss';
+import { useDebounce } from '@shared/lib/hooks/use-debounce.ts';
+import InputText from '@shared/ui/inputs/input-text/ui/input-text.tsx';
+import { setPriceMax, setPriceMin } from 'src/app/store/slices/products-slice';
+import cl from './product-search.module.scss';
 
 const ProductSearch = () => {
   const dispatch = useAppDispatch();
@@ -15,12 +15,12 @@ const ProductSearch = () => {
   const debouncedMinPrice = useDebounce(minPriceValue, 500);
   const debouncedMaxPrice = useDebounce(maxPriceValue, 500);
 
-  const handleMinPriceChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setMinPriceValue(e.target.value);
+  const handleMinPriceChange = useCallback((value: string) => {
+    setMinPriceValue(value);
   }, []);
 
-  const handleMaxPriceChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setMaxPriceValue(e.target.value);
+  const handleMaxPriceChange = useCallback((value: string) => {
+    setMaxPriceValue(value);
   }, []);
 
   useEffect(() => {

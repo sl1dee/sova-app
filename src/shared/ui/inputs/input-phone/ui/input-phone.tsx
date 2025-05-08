@@ -1,8 +1,8 @@
 import { FC, memo, useCallback, useEffect, useState } from 'react';
 import type { FieldError } from 'react-hook-form';
 import { getRawPhoneFromParsedPhone, parseRawPhone } from '@shared/lib/phone-mask';
-import InputBase from '@shared/ui/inputs/input-base/ui/InputBase.tsx';
-import cl from './InputPhone.module.scss';
+import InputBase from '@shared/ui/inputs/input-base/ui/input-base.tsx';
+import cl from './input-phone.module.scss';
 
 interface IInputPhoneProps {
   value?: string;

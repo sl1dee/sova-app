@@ -1,1 +1,1 @@
-export { default } from './ui/InputPhone.tsx';
+export { default } from './ui/input-phone.tsx';

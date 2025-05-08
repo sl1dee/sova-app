@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useAppSelector } from '@app/store/store.hooks.ts';
-import cl from './ProductIdPage.module.scss';
+import cl from './product-id-page.module.scss';
 
 const ProductIdPage = () => {
   const { id } = useParams();

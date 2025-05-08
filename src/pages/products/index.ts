@@ -1,1 +1,1 @@
-export { default } from './ui/ProductsPage.tsx';
+export { default } from './ui/products-page.tsx';

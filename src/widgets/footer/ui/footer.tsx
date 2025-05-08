@@ -1,4 +1,4 @@
-import cl from './Footer.module.scss';
+import cl from './footer.module.scss';
 
 const Footer = () => {
   return (

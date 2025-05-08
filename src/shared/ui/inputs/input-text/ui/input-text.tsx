@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from 'react';
 import type { FieldError } from 'react-hook-form';
-import InputBase from '@shared/ui/inputs/input-base/ui/InputBase.tsx';
-import cl from './InputText.module.scss';
+import InputBase from '@shared/ui/inputs/input-base/ui/input-base.tsx';
+import cl from './input-text.module.scss';
 
 interface IInputTextProps {
   value: string;

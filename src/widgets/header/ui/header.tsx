@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from '@features/auth';
-import Auth from '@features/auth/ui/Auth.tsx';
-import Feedback from '@features/feedback/ui/Feedback.tsx';
-import cl from './Header.module.scss';
+import Auth, { useAuth } from '@features/auth';
+import Feedback from '@features/feedback/ui/feedback.tsx';
+import cl from './header.module.scss';
 
 const Header = () => {
   const { isAuthenticated, user } = useAuth();

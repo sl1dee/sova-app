@@ -1,1 +1,1 @@
-export { default } from './ui/InputEmail.tsx';
+export { default } from './ui/input-email.tsx';

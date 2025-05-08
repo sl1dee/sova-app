@@ -1,1 +1,1 @@
-export { default } from './ui/InputText.tsx';
+export { default } from './ui/input-text.tsx';

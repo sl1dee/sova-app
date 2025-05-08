@@ -1,1 +1,1 @@
-export { default } from './ui/AuthModal.tsx';
+export { default } from './ui/auth-modal.tsx';

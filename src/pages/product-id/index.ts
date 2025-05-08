@@ -1,1 +1,1 @@
-export { default } from './ui/ProductIdPage.tsx';
+export { default } from './ui/product-id-page.tsx';

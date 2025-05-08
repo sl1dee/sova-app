@@ -1,1 +1,1 @@
-export { default } from './ui/InputPassword.tsx';
+export { default } from './ui/input-password.tsx';

@@ -1,1 +1,1 @@
-export { default } from './ui/InputBase.tsx';
+export { default } from './ui/input-base.tsx';

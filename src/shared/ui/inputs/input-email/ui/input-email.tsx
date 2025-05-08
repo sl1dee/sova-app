@@ -1,17 +1,16 @@
 import { FC, memo, useCallback } from 'react';
 import type { FieldError } from 'react-hook-form';
-import InputBase from '@shared/ui/inputs/input-base/ui/InputBase.tsx';
-import cl from './InputPassword.module.scss';
+import InputBase from '@shared/ui/inputs/input-base/ui/input-base.tsx';
+import cl from './input-email.module.scss';
 
-interface IInputPasswordProps {
+interface IInputEmailProps {
   value: string;
   onChange: (value: string) => void;
   error?: string | FieldError;
   isSubmitted?: boolean;
-  minLength?: number;
 }
 
-const InputPassword: FC<IInputPasswordProps> = ({ value, onChange, error, ...props }) => {
+const InputEmail: FC<IInputEmailProps> = ({ value, onChange, error, ...props }) => {
   const handleChange = useCallback(
     (value: string) => {
       onChange(value);
@@ -21,10 +20,10 @@ const InputPassword: FC<IInputPasswordProps> = ({ value, onChange, error, ...pro
 
   return (
     <div className={cl.container}>
-      <InputBase value={value} onChange={handleChange} placeholder="Введите пароль" type="password" {...props} />
+      <InputBase value={value} onChange={handleChange} placeholder="example@domain.com" type="email" {...props} />
       {error && <span className={cl.error}>{typeof error === 'string' ? error : error.message}</span>}
     </div>
   );
 };
 
-export default memo(InputPassword);
+export default memo(InputEmail);

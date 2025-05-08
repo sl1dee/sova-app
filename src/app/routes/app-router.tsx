@@ -1,11 +1,11 @@
 import { FC, lazy, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { setAuth } from '@app/store/slices/authSlice';
 import ProtectedRoute from '@features/protected-route';
 import ProductsPage from '@pages/products';
 import type { IPerson } from '@shared/api/auth/auth.types.ts';
 import Layout from '@widgets/layout';
+import { setAuth } from 'src/app/store/slices/auth-slice';
 
 const ProductIdPage = lazy(() => import('@pages/product-id'));
 const UserPage = lazy(() => import('@pages/user'));

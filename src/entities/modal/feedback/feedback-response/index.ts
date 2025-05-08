@@ -1,1 +1,1 @@
-export { default } from './ui/FeedbackResponse.tsx';
+export { default } from './ui/feedback-response.tsx';

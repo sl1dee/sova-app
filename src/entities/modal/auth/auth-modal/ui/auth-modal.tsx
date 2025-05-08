@@ -1,9 +1,9 @@
 import { FC, memo, useCallback } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { useAuth } from '@features/auth/lib/useAuth.ts';
-import InputPassword from '@shared/ui/inputs/input-password/ui/InputPassword.tsx';
-import InputPhone from '@shared/ui/inputs/input-phone/ui/InputPhone.tsx';
-import cl from './AuthModal.module.scss';
+import { useAuth } from '@features/auth/lib/use-auth.ts';
+import InputPassword from '@shared/ui/inputs/input-password/ui/input-password.tsx';
+import InputPhone from '@shared/ui/inputs/input-phone/ui/input-phone.tsx';
+import cl from './auth-modal.module.scss';
 
 interface IAuthFormData {
   phone: string;

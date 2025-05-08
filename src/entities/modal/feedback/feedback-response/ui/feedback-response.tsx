@@ -1,6 +1,6 @@
 import { FC, useCallback, useEffect } from 'react';
 import { useAuth } from '@features/auth';
-import cl from './FeedbackResponse.module.scss';
+import cl from './feedback-response.module.scss';
 
 interface IFeedbackResponseData {
   fullName: string;

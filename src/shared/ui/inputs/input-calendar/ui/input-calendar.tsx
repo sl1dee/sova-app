@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from 'react';
 import InputBase from '@shared/ui/inputs/input-base';
-import cl from './InputCalendar.module.scss';
+import cl from './input-calendar.module.scss';
 
 interface IInputCalendarProps {
   value: string;

@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { selectPaginatedProducts, selectTotalPages } from '@app/store/selectors/productsSelector.ts';
-import { setCurrentPage } from '@app/store/slices/productsSlice';
+import { selectPaginatedProducts, selectTotalPages } from '@app/store/selectors/products-selector.ts';
 import { useAppDispatch, useAppSelector } from '@app/store/store.hooks.ts';
 import ProductList from '@entities/product/product-list';
 import ProductSearch from '@entities/product/product-search';
 import { useGetProductsQuery } from '@shared/api/products/products.ts';
 import Pagination from '@shared/ui/pagination';
-import cl from './ProductsPage.module.scss';
+import { setCurrentPage } from 'src/app/store/slices/products-slice';
+import cl from './products-page.module.scss';
 
 const ProductsPage = () => {
   const dispatch = useAppDispatch();

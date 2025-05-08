@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@features/auth/lib/useAuth.ts';
-import cl from './UserPage.module.scss';
+import { useAuth } from '@features/auth/lib/use-auth.ts';
+import cl from './user-page.module.scss';
 
 const UserPage = () => {
   const { user, signOut } = useAuth();
