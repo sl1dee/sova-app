@@ -5,15 +5,15 @@ import cl from './InputEmail.module.scss';
 
 interface IInputEmailProps {
   value: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: string) => void;
   error?: string | FieldError;
   isSubmitted?: boolean;
 }
 
 const InputEmail: FC<IInputEmailProps> = ({ value, onChange, error, ...props }) => {
   const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      onChange?.(e);
+    (value: string) => {
+      onChange(value);
     },
     [onChange],
   );

@@ -1,4 +1,5 @@
-import { FC, memo } from 'react';
+import { FC, memo, useCallback } from 'react';
+import InputBase from '@shared/ui/inputs/input-base';
 import cl from './InputCalendar.module.scss';
 
 interface IInputCalendarProps {
@@ -16,15 +17,15 @@ const InputCalendar: FC<IInputCalendarProps> = ({
   error,
   isSubmitted,
 }) => {
+  const handleChange = useCallback(
+    (value: string) => {
+      onChange(value);
+    },
+    [onChange],
+  );
   return (
     <div className={cl.calendar}>
-      <input
-        className={cl.input}
-        type="date"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-      />
+      <InputBase type="date" value={value} onChange={handleChange} placeholder={placeholder} />
       {error && isSubmitted && <span className={cl.error}>{error}</span>}
     </div>
   );

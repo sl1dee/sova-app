@@ -47,7 +47,8 @@ const AuthModal: FC<IAuthModalProps> = ({ isOpen, onClose }) => {
 
   const handleCloseClick = useCallback(() => {
     onClose();
-  }, [onClose]);
+    reset();
+  }, [onClose, reset]);
 
   const handleStopPropagation = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();

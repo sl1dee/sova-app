@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useState } from 'react';
+import { FC, memo, useCallback, useEffect, useState } from 'react';
 import type { FieldError } from 'react-hook-form';
 import { getRawPhoneFromParsedPhone, parseRawPhone } from '@shared/lib/phone-mask';
 import InputBase from '@shared/ui/inputs/input-base/ui/InputBase.tsx';
@@ -13,19 +13,29 @@ interface IInputPhoneProps {
 }
 
 const InputPhone: FC<IInputPhoneProps> = ({ value, onChange, error, ...props }) => {
-  const [viewPhone, setViewPhone] = useState(value || '');
+  const [viewPhone, setViewPhone] = useState(() => (value ? parseRawPhone(value) : ''));
+
+  useEffect(() => {
+    if (value !== undefined) {
+      const parsedValue = parseRawPhone(value);
+      if (parsedValue !== viewPhone) {
+        setViewPhone(parsedValue);
+      }
+    }
+  }, [value, viewPhone]);
 
   const changePhoneHandler = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const rawPhone = getRawPhoneFromParsedPhone(e.target.value, viewPhone);
-      const newViewPhone = parseRawPhone(rawPhone);
+    (inputValue: string) => {
+      const rawPhone = getRawPhoneFromParsedPhone(inputValue, viewPhone); // Преобразует отформатированный номер в сырой
+      const newViewPhone = parseRawPhone(rawPhone); // Преобразует сырой номер обратно в отформатированный для отображения
 
       setViewPhone(newViewPhone);
+
       if (onChange) {
-        onChange(e, rawPhone);
+        onChange({ target: { value: inputValue } } as React.ChangeEvent<HTMLInputElement>, rawPhone);
       }
     },
-    [viewPhone, onChange],
+    [onChange, viewPhone],
   );
 
   return (

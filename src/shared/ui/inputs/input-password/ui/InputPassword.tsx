@@ -5,7 +5,7 @@ import cl from './InputPassword.module.scss';
 
 interface IInputPasswordProps {
   value: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: string) => void;
   error?: string | FieldError;
   isSubmitted?: boolean;
   minLength?: number;
@@ -13,8 +13,8 @@ interface IInputPasswordProps {
 
 const InputPassword: FC<IInputPasswordProps> = ({ value, onChange, error, ...props }) => {
   const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      onChange?.(e);
+    (value: string) => {
+      onChange(value);
     },
     [onChange],
   );
