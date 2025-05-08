@@ -1,12 +1,26 @@
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 999;
+}
+
+.modal {
+  width: 400px;
   background-color: #888888;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 300px;
+  position: relative;
+  animation: scaleIn 0.3s ease forwards;
 }
 
 .title {
-  margin-bottom: 20px;
+  margin: 0;
   text-align: center;
   font-size: 24px;
   font-weight: 600;
@@ -90,4 +104,14 @@
     font-size: 14px;
     color: #666;
   }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }

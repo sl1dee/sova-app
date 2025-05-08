@@ -10,20 +10,19 @@
 }
 
 .modal {
+  width: 400px;
   background-color: #888888;
   padding: 20px;
   border-radius: 12px;
-  min-width: 300px;
-  max-width: 500px;
-  width: 100%;
   position: relative;
   animation: scaleIn 0.3s ease forwards;
 }
 
 .title {
-  margin: 0 0 20px 0;
+  margin-bottom: 20px;
   text-align: center;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .formData {
@@ -56,7 +55,6 @@
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  color: #333;
 }
 
 @keyframes fadeIn {

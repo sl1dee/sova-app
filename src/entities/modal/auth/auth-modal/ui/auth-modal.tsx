@@ -60,7 +60,7 @@ const AuthModal: FC<IAuthModalProps> = ({ isOpen, onClose }) => {
     <div className={cl.overlay} onClick={handleCloseClick}>
       <div className={cl.modal} onClick={handleStopPropagation}>
         <form onSubmit={handleSubmit(onSubmit)} className={cl.form}>
-          <h2 className={cl.title}>Вход</h2>
+          <h2 className={cl.title}>Sing in form</h2>
 
           <Controller
             name="phone"
@@ -102,7 +102,7 @@ const AuthModal: FC<IAuthModalProps> = ({ isOpen, onClose }) => {
             )}
           />
 
-          <button type="submit">Войти</button>
+          <button type="submit">Sing in</button>
         </form>
         <button type="button" className={cl.closeBtn} onClick={handleCloseClick}>
           ✖
