@@ -5,8 +5,22 @@ import InputCalendar from '@shared/ui/inputs/input-calendar/ui/InputCalendar.tsx
 import InputEmail from '@shared/ui/inputs/input-email/ui/InputEmail.tsx';
 import InputPhone from '@shared/ui/inputs/input-phone/ui/InputPhone.tsx';
 import InputText from '@shared/ui/inputs/input-text/ui/InputText.tsx';
-import type { IFeedbackModalData, IFeedbackModalProps } from '../types';
 import cl from './FeedbackModal.module.scss';
+
+export interface IFeedbackModalData {
+  fullName: string;
+  phone: string;
+  email: string;
+  date: string;
+  comment: string;
+  id?: number;
+  birthday?: string;
+}
+
+interface IFeedbackModalProps {
+  onSubmit?: (data: IFeedbackModalData) => void;
+  onClose: () => void;
+}
 
 const FeedbackModal: FC<IFeedbackModalProps> = ({ onSubmit, onClose }) => {
   const { user, isAuthenticated } = useAuth();

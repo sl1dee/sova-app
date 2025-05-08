@@ -1,7 +1,11 @@
 import { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
-import type { IProductCardProps } from '../types';
+import type { IProduct } from '@shared/api/products/products.types.ts';
 import cl from './ProductCard.module.scss';
+
+interface IProductCardProps {
+  product: IProduct;
+}
 
 const ProductCard: FC<IProductCardProps> = ({ product }) => {
   return (

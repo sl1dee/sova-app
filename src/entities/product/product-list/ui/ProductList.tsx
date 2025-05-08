@@ -1,7 +1,13 @@
 import { FC, memo } from 'react';
 import ProductCard from '@entities/product/product-card/ui/ProductCard.tsx';
-import type { IProductListProps } from '../types';
+import type { IProduct } from '@shared/api/products/products.types.ts';
 import cl from './ProductList.module.scss';
+
+interface IProductListProps {
+  products: IProduct[];
+  isLoading: boolean;
+  error?: string;
+}
 
 const ProductList: FC<IProductListProps> = ({ products, isLoading, error }) => {
   if (isLoading) {

@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import FeedbackModal from '@entities/modal/feedback/feedback-modal';
-import type { IFeedbackModalData } from '@entities/modal/feedback/feedback-modal/types';
+import type { IFeedbackModalData } from '@entities/modal/feedback/feedback-modal/ui/FeedbackModal.tsx';
 import FeedbackResponse from '@entities/modal/feedback/feedback-response';
 import cl from './Feedback.module.scss';
 

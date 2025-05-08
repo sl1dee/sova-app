@@ -3,8 +3,17 @@ import { Controller, useForm } from 'react-hook-form';
 import { useAuth } from '@features/auth/lib/useAuth.ts';
 import InputPassword from '@shared/ui/inputs/input-password/ui/InputPassword.tsx';
 import InputPhone from '@shared/ui/inputs/input-phone/ui/InputPhone.tsx';
-import type { IAuthFormData, IAuthModalProps } from '../types';
 import cl from './AuthModal.module.scss';
+
+interface IAuthFormData {
+  phone: string;
+  password: string;
+}
+
+interface IAuthModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
 const AuthModal: FC<IAuthModalProps> = ({ isOpen, onClose }) => {
   const { signIn, isAuthenticated } = useAuth();

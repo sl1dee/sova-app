@@ -1,7 +1,22 @@
 import { FC, useEffect } from 'react';
 import { useAuth } from '@features/auth';
-import type { IFeedbackResponseProps } from '../types';
 import cl from './FeedbackResponse.module.scss';
+
+interface IFeedbackResponseData {
+  fullName: string;
+  phone: string;
+  email: string;
+  date: string;
+  comment: string;
+  userId?: string;
+  birthDate?: string;
+}
+
+interface IFeedbackResponseProps {
+  isOpen: boolean;
+  onClose: () => void;
+  data: IFeedbackResponseData;
+}
 
 const FeedbackResponse: FC<IFeedbackResponseProps> = ({ isOpen, onClose, data }) => {
   const { user } = useAuth();

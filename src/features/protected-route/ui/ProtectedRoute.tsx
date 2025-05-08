@@ -1,9 +1,12 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@features/auth';
-import type { ProtectedRouteProps } from '../types';
 
-const ProtectedRoute: FC<ProtectedRouteProps> = ({ children }) => {
+interface IProtectedRouteProps {
+  children: ReactNode;
+}
+
+const ProtectedRoute: FC<IProtectedRouteProps> = ({ children }) => {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {

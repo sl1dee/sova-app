@@ -11,8 +11,8 @@ export const productsApi = createApi({
         url: '/products',
         params: {
           _quantity: params.total_items || 100,
-          ...(params.price_min ? { price_min: params.price_min } : {}),
-          ...(params.price_max ? { price_max: params.price_max } : {}),
+          ...(params.price_min ? { _price_min: params.price_min } : {}),
+          ...(params.price_max ? { _price_max: params.price_max } : {}),
         },
       }),
       providesTags: ['Products'],
