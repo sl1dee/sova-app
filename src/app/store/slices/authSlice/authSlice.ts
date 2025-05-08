@@ -3,14 +3,13 @@ import { IPerson } from '@shared/api/auth/auth.types.ts';
 import { IAuthState } from './authSlice.types.ts';
 
 const initialState: IAuthState = {
-  isAuthenticated: !!localStorage.getItem('userPhone'),
-  user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null,
+  isAuthenticated: false,
+  user: null,
 };
 
 /**
  * При успешной аутентификации, сохраняем данные в localStorage, чтобы при обновлении страницы пользователь был авторизован
  */
-
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -27,8 +26,17 @@ const authSlice = createSlice({
       localStorage.removeItem('userPhone');
       localStorage.removeItem('user');
     },
+    setAuth: (state, action: PayloadAction<IPerson | null>) => {
+      if (action.payload) {
+        state.user = action.payload;
+        state.isAuthenticated = true;
+      } else {
+        state.user = null;
+        state.isAuthenticated = false;
+      }
+    },
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout, setAuth } = authSlice.actions;
 export default authSlice.reducer;
