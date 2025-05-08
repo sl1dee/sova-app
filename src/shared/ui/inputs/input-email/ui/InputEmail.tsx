@@ -1,12 +1,22 @@
-import { FC, memo } from 'react';
+import { FC, memo, useCallback } from 'react';
+import type { FieldError } from 'react-hook-form';
 import InputBase from '@shared/ui/inputs/input-base/ui/InputBase.tsx';
-import type { IInputEmailProps } from '../types';
 import cl from './InputEmail.module.scss';
 
-const InputEmail: FC<IInputEmailProps> = ({ value, onChange, error, isSubmitted, ...props }) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e);
-  };
+interface IInputEmailProps {
+  value: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: string | FieldError;
+  isSubmitted?: boolean;
+}
+
+const InputEmail: FC<IInputEmailProps> = ({ value, onChange, error, ...props }) => {
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange?.(e);
+    },
+    [onChange],
+  );
 
   return (
     <div className={cl.container}>

@@ -1,9 +1,17 @@
 import { FC, memo } from 'react';
+import type { FieldError } from 'react-hook-form';
 import InputBase from '@shared/ui/inputs/input-base/ui/InputBase.tsx';
-import type { IInputTextProps } from '../types';
 import cl from './InputText.module.scss';
 
-const TextInput: FC<IInputTextProps> = ({ error, placeholder, isSubmitted, ...props }) => {
+interface IInputTextProps {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: string | FieldError;
+  placeholder: string;
+  isSubmitted?: boolean;
+}
+
+const TextInput: FC<IInputTextProps> = ({ error, placeholder, ...props }) => {
   return (
     <div className={cl.container}>
       <InputBase type="text" placeholder={placeholder} {...props} />

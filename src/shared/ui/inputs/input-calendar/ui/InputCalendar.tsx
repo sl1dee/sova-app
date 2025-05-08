@@ -1,6 +1,13 @@
 import { FC, memo } from 'react';
-import type { IInputCalendarProps } from '../types';
 import cl from './InputCalendar.module.scss';
+
+interface IInputCalendarProps {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  error?: string;
+  isSubmitted?: boolean;
+}
 
 const InputCalendar: FC<IInputCalendarProps> = ({
   value,

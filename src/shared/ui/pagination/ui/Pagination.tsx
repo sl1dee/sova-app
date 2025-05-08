@@ -1,8 +1,14 @@
 import { FC, memo, useCallback, useMemo } from 'react';
 import { setCurrentPage } from '@app/store/slices/productsSlice';
 import { useAppDispatch } from '@app/store/store.hooks.ts';
-import type { IPaginationProps } from '../types';
 import cl from './Pagination.module.scss';
+
+interface IPaginationProps {
+  currentPage: number;
+  totalPages: number;
+  visiblePages?: number;
+  onPageChange?: (page: number) => void;
+}
 
 const Pagination: FC<IPaginationProps> = ({ currentPage, totalPages, visiblePages = 7, onPageChange }) => {
   const dispatch = useAppDispatch();
