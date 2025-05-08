@@ -27,13 +27,11 @@ const ProductsPage = () => {
     }
   }, [totalPages, currentPage, dispatch]);
 
-  const errorMessage = error ? ('error' in error ? error.error : JSON.stringify(error)) : undefined;
-
   return (
     <div className={cl.wrapper}>
       <h1 className={cl.title}>Products</h1>
       <ProductSearch />
-      <ProductList products={paginatedProducts} isLoading={isLoading} error={errorMessage} />
+      <ProductList products={paginatedProducts} isLoading={isLoading} error={error} />
       <Pagination currentPage={currentPage} totalPages={totalPages} />
     </div>
   );

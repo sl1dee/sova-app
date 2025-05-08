@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@features/auth/lib/useAuth.ts';
 import cl from './UserPage.module.scss';
@@ -6,10 +7,10 @@ const UserPage = () => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
 
-  const handleSignOut = () => {
+  const handleSignOut = useCallback(() => {
     signOut();
     navigate('/', { replace: true });
-  };
+  }, [signOut, navigate]);
 
   return (
     <div className={cl.wrapper}>

@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useCallback, useEffect } from 'react';
 import { useAuth } from '@features/auth';
 import cl from './FeedbackResponse.module.scss';
 
@@ -31,11 +31,19 @@ const FeedbackResponse: FC<IFeedbackResponseProps> = ({ isOpen, onClose, data })
     };
   }, [isOpen]);
 
+  const handleCloseClick = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
+  const handleStopPropagation = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+  }, []);
+
   if (!isOpen) return null;
 
   return (
-    <div className={cl.overlay} onClick={onClose}>
-      <div className={cl.modal} onClick={(e) => e.stopPropagation()}>
+    <div className={cl.overlay} onClick={handleCloseClick}>
+      <div className={cl.modal} onClick={handleStopPropagation}>
         <h2 className={cl.title}>Спасибо за обращение!</h2>
         <div className={cl.formData}>
           <div className={cl.dataRow}>
@@ -71,7 +79,7 @@ const FeedbackResponse: FC<IFeedbackResponseProps> = ({ isOpen, onClose, data })
             </div>
           )}
         </div>
-        <button className={cl.closeBtn} onClick={onClose}>
+        <button className={cl.closeBtn} onClick={handleCloseClick}>
           ✖
         </button>
       </div>

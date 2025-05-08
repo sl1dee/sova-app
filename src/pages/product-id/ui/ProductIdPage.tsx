@@ -46,7 +46,7 @@ const ProductIdPage = () => {
             <img src={product.image} alt={product.name} className={cl.productImage} />
           </div>
 
-          {product.images && product.images.length > 0 && (
+          {product?.images?.length > 0 && (
             <div className={cl.imageGallery}>
               {product.images.map((image, index) => (
                 <div key={index} className={cl.galleryItem}>
@@ -86,7 +86,7 @@ const ProductIdPage = () => {
             </div>
           </div>
 
-          {product.categories && product.categories.length > 0 && (
+          {product?.categories?.length > 0 && (
             <div className={cl.categoriesSection}>
               <h3 className={cl.sectionTitle}>Categories</h3>
               <div className={cl.tagsContainer}>
@@ -99,7 +99,7 @@ const ProductIdPage = () => {
             </div>
           )}
 
-          {product.tags && product.tags.length > 0 && (
+          {product?.tags?.length > 0 && (
             <div className={cl.tagsSection}>
               <h3 className={cl.sectionTitle}>Tags</h3>
               <div className={cl.tagsContainer}>

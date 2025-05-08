@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useAuth } from '@features/auth';
 import InputCalendar from '@shared/ui/inputs/input-calendar/ui/InputCalendar.tsx';
@@ -41,18 +41,23 @@ const FeedbackModal: FC<IFeedbackModalProps> = ({ onSubmit, onClose }) => {
     },
   });
 
-  const handleFormSubmit = (data: IFeedbackModalData) => {
-    const enrichedData = {
-      ...data,
-      id: isAuthenticated ? user?.id : undefined,
-      birthday: isAuthenticated ? user?.birthday : undefined,
-    };
+  const handleFormSubmit = useCallback(
+    (data: IFeedbackModalData) => {
+      const enrichedData = {
+        ...data,
+        id: isAuthenticated ? user?.id : undefined,
+        birthday: isAuthenticated ? user?.birthday : undefined,
+      };
 
-    if (onSubmit) {
-      onSubmit(enrichedData);
-    }
-    reset();
-  };
+      onSubmit?.(enrichedData);
+      reset();
+    },
+    [isAuthenticated, user, onSubmit, reset],
+  );
+
+  const handleCloseClick = useCallback(() => {
+    onClose();
+  }, [onClose]);
 
   return (
     <div className={cl.container}>
@@ -163,7 +168,7 @@ const FeedbackModal: FC<IFeedbackModalProps> = ({ onSubmit, onClose }) => {
           <button type="submit" className={cl.submitButton}>
             Отправить
           </button>
-          <button type="button" className={cl.cancelButton} onClick={onClose}>
+          <button type="button" className={cl.cancelButton} onClick={handleCloseClick}>
             Отмена
           </button>
         </div>

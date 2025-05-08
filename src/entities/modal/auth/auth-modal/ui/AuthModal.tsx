@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useAuth } from '@features/auth/lib/useAuth.ts';
 import InputPassword from '@shared/ui/inputs/input-password/ui/InputPassword.tsx';
@@ -32,21 +32,32 @@ const AuthModal: FC<IAuthModalProps> = ({ isOpen, onClose }) => {
     },
   });
 
-  const onSubmit = (data: IAuthFormData) => {
-    const result = signIn(data.phone, data.password);
-    if (!result.success) {
-      setError('phone', { message: result.message });
-    } else {
-      reset();
-      onClose();
-    }
-  };
+  const onSubmit = useCallback(
+    (data: IAuthFormData) => {
+      const result = signIn(data.phone, data.password);
+      if (!result.success) {
+        setError('phone', { message: result.message });
+      } else {
+        reset();
+        onClose();
+      }
+    },
+    [signIn, setError, reset, onClose],
+  );
+
+  const handleCloseClick = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
+  const handleStopPropagation = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+  }, []);
 
   if (!isOpen || isAuthenticated) return null;
 
   return (
-    <div className={cl.overlay} onClick={onClose}>
-      <div className={cl.modal} onClick={(e) => e.stopPropagation()}>
+    <div className={cl.overlay} onClick={handleCloseClick}>
+      <div className={cl.modal} onClick={handleStopPropagation}>
         <form onSubmit={handleSubmit(onSubmit)} className={cl.form}>
           <h2 className={cl.title}>Вход</h2>
 
@@ -92,7 +103,7 @@ const AuthModal: FC<IAuthModalProps> = ({ isOpen, onClose }) => {
 
           <button type="submit">Войти</button>
         </form>
-        <button className={cl.closeBtn} onClick={onClose}>
+        <button type="button" className={cl.closeBtn} onClick={handleCloseClick}>
           ✖
         </button>
       </div>
@@ -100,4 +111,4 @@ const AuthModal: FC<IAuthModalProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default AuthModal;
+export default memo(AuthModal);

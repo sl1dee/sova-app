@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import AuthModal from '@entities/modal/auth/auth-modal';
 import { useAuth } from '@features/auth';
 
@@ -6,9 +6,9 @@ const Auth = () => {
   const { isAuthenticated } = useAuth();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
-  const handleAuthModalClose = () => {
+  const handleAuthModalClose = useCallback(() => {
     setIsAuthModalOpen(false);
-  };
+  }, []);
 
   return (
     <>
