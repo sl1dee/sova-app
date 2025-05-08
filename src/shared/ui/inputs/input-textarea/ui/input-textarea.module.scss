@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea {
+  resize: vertical;
+  font-family: inherit;
+  min-height: 100px;
+  max-height: 200px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #888888;
+  background-color: #ccc;
+  color: #888888;
+
+  &:focus {
+    border-color: #555555;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 4px;
+}
