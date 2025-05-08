@@ -1,6 +1,6 @@
 import { FC, memo, useCallback, useMemo } from 'react';
+import { setCurrentPage } from '@app/store/slices/products-slice';
 import { useAppDispatch } from '@app/store/store.hooks.ts';
-import { setCurrentPage } from 'src/app/store/slices/products-slice';
 import cl from './pagination.module.scss';
 
 interface IPaginationProps {

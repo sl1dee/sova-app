@@ -1,10 +1,11 @@
 import { FC, useCallback } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useAuth } from '@features/auth';
-import InputCalendar from '@shared/ui/inputs/input-calendar/ui/input-calendar.tsx';
-import InputEmail from '@shared/ui/inputs/input-email/ui/input-email.tsx';
-import InputPhone from '@shared/ui/inputs/input-phone/ui/input-phone.tsx';
-import InputText from '@shared/ui/inputs/input-text/ui/input-text.tsx';
+import InputCalendar from '@shared/ui/inputs/input-calendar';
+import InputEmail from '@shared/ui/inputs/input-email';
+import InputPhone from '@shared/ui/inputs/input-phone';
+import InputText from '@shared/ui/inputs/input-text';
+import InputTextarea from '@shared/ui/inputs/input-textarea';
 import cl from './feedback-modal.module.scss';
 
 export interface IFeedbackModalData {
@@ -151,16 +152,13 @@ const FeedbackModal: FC<IFeedbackModalProps> = ({ onSubmit, onClose }) => {
             },
           }}
           render={({ field, fieldState }) => (
-            <div className={cl.textareaContainer}>
-              <textarea
-                className={cl.textarea}
-                value={field.value}
-                onChange={(e) => field.onChange(e.target.value)}
-                placeholder="Комментарий"
-                rows={4}
-              />
-              {fieldState.error && isSubmitted && <span className={cl.error}>{fieldState.error.message}</span>}
-            </div>
+            <InputTextarea
+              value={field.value}
+              onChange={field.onChange}
+              error={fieldState.error?.message}
+              placeholder="Комментарий"
+              isSubmitted={isSubmitted}
+            />
           )}
         />
 

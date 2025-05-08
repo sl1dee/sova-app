@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
+import { login, logout } from '@app/store/slices/auth-slice';
 import { useAppDispatch, useAppSelector } from '@app/store/store.hooks.ts';
 import { useGetPersonsQuery } from '@shared/api/auth/auth.ts';
-import { login, logout } from 'src/app/store/slices/auth-slice';
 
 export const useAuth = () => {
   const { data, isLoading, error } = useGetPersonsQuery(1);
