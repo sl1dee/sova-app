@@ -1,8 +1,8 @@
 import { FC, lazy, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import ProtectedRoute from '@app/router/protected-route';
 import { setAuth } from '@app/store/slices/auth-slice';
-import ProtectedRoute from '@features/protected-route';
 import ProductsPage from '@pages/products';
 import type { IPerson } from '@shared/api/auth/auth.types.ts';
 import Layout from '@widgets/layout';
@@ -10,7 +10,7 @@ import Layout from '@widgets/layout';
 const ProductIdPage = lazy(() => import('@pages/product-id'));
 const UserPage = lazy(() => import('@pages/user'));
 
-export const AppRouter: FC = () => {
+const AppRouter: FC = () => {
   const dispatch = useDispatch();
 
   /**
@@ -62,3 +62,5 @@ export const AppRouter: FC = () => {
     </Layout>
   );
 };
+
+export default AppRouter;

@@ -42,10 +42,6 @@ const ProductIdPage = () => {
 
       <div className={cl.productContent}>
         <div className={cl.productImageContainer}>
-          <div className={cl.mainImage}>
-            <img src={product.image} alt={product.name} className={cl.productImage} />
-          </div>
-
           {product?.images?.length > 0 && (
             <div className={cl.imageGallery}>
               {product.images.map((image, index) => (

@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 import { setPriceMax, setPriceMin } from '@app/store/slices/products-slice';
 import { useAppDispatch, useAppSelector } from '@app/store/store.hooks.ts';
-import { useDebounce } from '@shared/lib/hooks/use-debounce.ts';
+import { useDebounce } from '@shared/hooks/use-debounce.ts';
 import InputText from '@shared/ui/inputs/input-text/ui/input-text.tsx';
 import cl from './product-search.module.scss';
 

@@ -6,10 +6,10 @@ import { productsApi } from '@shared/api/products/products.ts';
 
 export const store = configureStore({
   reducer: {
-    [authApi.reducerPath]: authApi.reducer,
     auth: authReducer,
-    [productsApi.reducerPath]: productsApi.reducer,
     products: productsReducer,
+    [authApi.reducerPath]: authApi.reducer,
+    [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(authApi.middleware).concat(productsApi.middleware),
